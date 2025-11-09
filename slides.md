@@ -1,7 +1,7 @@
 ---
-title: DevelopmentSeed Slidev Theme
+title: Portable CQL2
 info: |
-  DevelopmentSeed Slidev Theme - A demonstration of layouts, components, and Slidev capabilities.
+  Portable CQL2: A Rust Core for Queries Everywhere
 class: text-center
 highlighter: shiki
 drawings:
@@ -10,18 +10,17 @@ drawings:
 transition: slide-left
 mdc: true
 addons:
-    - slidev-addon-qrcode
+  - slidev-addon-qrcode
 
 theme: './theme'
 layout: title
-image: /images/theme/lena-delta.jpg
+image: https://images.unsplash.com/photo-1579818276659-2943e3cd4b30
 ---
 
-
-# DevelopmentSeed Slidev Theme
+# Portable CQL2
 
 ::subtitle::
-A showcase of layouts, components, and features
+A Rust Core for Queries Everywhere
 
 <DecorativeRectangle
   width="50%"
@@ -29,20 +28,91 @@ A showcase of layouts, components, and features
   zIndex=20
   :position="{
     bottom: '2%',
-    right: '2%',
+    right: '0%',
   }"
-  :customStyle="{ mixBlendMode: 'multiply' }"
+  :customStyle="{ 
+    mixBlendMode: 'multiply',
+    borderTopRightRadius: 0,
+    borderBottomRightRadius: 0,
+  }"
 >
   <!-- You can place content _inside_ of rectangles! -->
   <div w-full h-full relative flex flex-col items-end justify-end p-4 text-white text-right>
+    <h4>
+      ⚡️ Lightning Talk
+    </h4>
     <h3 text-5xl>
-      Your Event
+      FOSS4G
     </h3>
     <h4 text-md font-mono>
-      2025-01-15
+      2025-11-19
     </h4>
     <h5 text-sm>
-      <code text-primary>@presenter</code>
+      <code text-primary>@alukach</code>
+    </h5>
+  </div>
+</DecorativeRectangle>
+<LogoHorPos position="top-left" height="24px" />
+
+---
+title: Portable CQL2
+info: |
+  Portable CQL2: A Rust Core for Queries Everywhere
+class: text-center
+highlighter: shiki
+drawings:
+  persist: false
+  enable: false
+transition: slide-left
+mdc: true
+addons:
+  - slidev-addon-qrcode
+
+theme: './theme'
+layout: title
+
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(async () => {
+  const wasm = await import("http://developmentseed.org/cql2-rs/latest/pkg/cql2_wasm.js")
+  await wasm.default()
+  const result = wasm.parse_cql2("INTERSECTS(...)")
+  console.log(result)
+})
+</script>
+# Portable CQL2
+
+::subtitle::
+A Rust Core for Queries Everywhere
+
+<DecorativeRectangle
+  width="50%"
+  height="40%"
+  zIndex=20
+  :position="{
+    bottom: '2%',
+    right: '0%',
+  }"
+  :customStyle="{ 
+    mixBlendMode: 'multiply',
+    borderTopRightRadius: 0,
+    borderBottomRightRadius: 0,
+  }"
+>
+  <!-- You can place content _inside_ of rectangles! -->
+  <div w-full h-full relative flex flex-col items-end justify-end p-4 text-white text-right>
+    <h4>
+      ⚡️ Lightning Talk
+    </h4>
+    <h3 text-5xl>
+      FOSS4G
+    </h3>
+    <h4 text-md font-mono>
+      2025-11-19
+    </h4>
+    <h5 text-sm>
+      <code text-primary>@alukach</code>
     </h5>
   </div>
 </DecorativeRectangle>
@@ -358,6 +428,8 @@ layout: cover
 # https://unsplash.com/photos/eGGENWtikd0
 background: https://images.unsplash.com/photo-1722083854850-4a24185465ac
 class: px-10
+monacoRunAdditionalDeps:
+  - ./deps/cql2/cql2_wasm.js
 ---
 
 ### Monaco Editor
@@ -365,27 +437,19 @@ class: px-10
 Interactive code with live execution
 
 ```ts {monaco-run} {autorun:true}
-/**
- * Fetch GitHub repositories for an organization
- */
-async function fetchRepositories(org: string = 'developmentseed') {
-  const url = `https://api.github.com/orgs/${org}/repos?per_page=5&sort=updated`;
-  console.log(`Fetching ${url}...`)
-  const response = await fetch(url);
-  const data = await response.json();
-  console.log(`Found ${data.length} repositories`)
-  if (!data.length) return console.log('No repositories found')
-  for (const repo of data) {
-    console.log(` - ${repo.name} (⭐ ${repo.stargazers_count})`);
-  }
-}
+import init, { parse_cql2 } from 'cql2'
 
-await fetchRepositories();
+await init();  // Initialize the WASM module
+
+const result = parse_cql2('INTERSECTS(...)');
+console.log(result);
 ```
 
 <LogoHorNegMono position="top-right" />
 
-<!-- NOTE: Monaco's interactive code runner does NOT play well with presenter mode. If you are presenting and want to do live code edits, do those edits on the shared screen, not in the presenter's view -->
+<!--
+NOTE: Monaco's interactive code runner does NOT play well with presenter mode. If you are presenting and want to do live code edits, do those edits on the shared screen, not in the presenter's view
+-->
 
 ---
 layout: image-left
