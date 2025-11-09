@@ -30,75 +30,7 @@ A Rust Core for Queries Everywhere
     bottom: '2%',
     right: '0%',
   }"
-  :customStyle="{ 
-    mixBlendMode: 'multiply',
-    borderTopRightRadius: 0,
-    borderBottomRightRadius: 0,
-  }"
->
-  <!-- You can place content _inside_ of rectangles! -->
-  <div w-full h-full relative flex flex-col items-end justify-end p-4 text-white text-right>
-    <h4>
-      ⚡️ Lightning Talk
-    </h4>
-    <h3 text-5xl>
-      FOSS4G
-    </h3>
-    <h4 text-md font-mono>
-      2025-11-19
-    </h4>
-    <h5 text-sm>
-      <code text-primary>@alukach</code>
-    </h5>
-  </div>
-</DecorativeRectangle>
-<LogoHorPos position="top-left" height="24px" />
-
----
-title: Portable CQL2
-info: |
-  Portable CQL2: A Rust Core for Queries Everywhere
-class: text-center
-highlighter: shiki
-drawings:
-  persist: false
-  enable: false
-transition: slide-left
-mdc: true
-addons:
-  - slidev-addon-qrcode
-
-theme: './theme'
-layout: title
-
-<script setup>
-import { onMounted } from 'vue'
-
-onMounted(async () => {
-  const wasm = await import("http://developmentseed.org/cql2-rs/latest/pkg/cql2_wasm.js")
-  await wasm.default()
-  const result = wasm.parse_cql2("INTERSECTS(...)")
-  console.log(result)
-})
-</script>
-# Portable CQL2
-
-::subtitle::
-A Rust Core for Queries Everywhere
-
-<DecorativeRectangle
-  width="50%"
-  height="40%"
-  zIndex=20
-  :position="{
-    bottom: '2%',
-    right: '0%',
-  }"
-  :customStyle="{ 
-    mixBlendMode: 'multiply',
-    borderTopRightRadius: 0,
-    borderBottomRightRadius: 0,
-  }"
+  :customStyle="{ mixBlendMode: 'multiply', borderTopRightRadius: 0, borderBottomRightRadius: 0 }"
 >
   <!-- You can place content _inside_ of rectangles! -->
   <div w-full h-full relative flex flex-col items-end justify-end p-4 text-white text-right>
