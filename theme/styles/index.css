@@ -178,22 +178,6 @@ blockquote p {
   color: white;
 }
 
-/* Ensure content appears above decorative rectangles */
-.slidev-layout h1,
-.slidev-layout h2,
-.slidev-layout h3,
-.slidev-layout h4,
-.slidev-layout h5,
-.slidev-layout h6,
-.slidev-layout p,
-.slidev-layout ul,
-.slidev-layout ol,
-.slidev-layout pre,
-.slidev-layout blockquote {
-  position: relative;
-  z-index: 10;
-}
-
 /* Add padding to default layout */
 .slidev-layout.default {
   padding: 4rem;
@@ -232,4 +216,7 @@ blockquote p {
 
 .slidev-code-wrapper, .slidev-code-block-title, .slidev-monaco-container {
   z-index: 1;
+}
+.slidev-monaco-container {
+  overflow: visible !important;
 }
