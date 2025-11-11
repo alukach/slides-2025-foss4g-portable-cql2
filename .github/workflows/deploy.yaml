@@ -31,16 +31,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Cache Slidev build
-        uses: actions/cache@v4
-        with:
-          path: |
-            .slidev
-            node_modules/.cache
-          key: ${{ runner.os }}-slidev-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-slidev-
-
       - name: Build
         run: pnpm run build --base /${{github.event.repository.name}}/
 
