@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "strict": false,
+    "noEmit": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.vue",
+    "**/*.md",
+    "globals.d.ts"
+  ]
+}

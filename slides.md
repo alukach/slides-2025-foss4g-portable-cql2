@@ -25,7 +25,7 @@ A Rust Core for Queries Everywhere
 <DecorativeRectangle
   width="50%"
   height="40%"
-  zIndex=20
+  :zIndex="20"
   :position="{
     bottom: '2%',
     right: '0%',
@@ -212,7 +212,7 @@ image: https://images.unsplash.com/photo-1722080767795-af488166033d
 <DecorativeRectangle
   width="15em"
   height="10rem"
-  zIndex=10
+  :zIndex="10"
   :position="{
     top: '4em',
     left: '7em',
@@ -226,7 +226,7 @@ Play around with the [`mix-blend-mode`](https://developer.mozilla.org/en-US/docs
 <DecorativeRectangle
   width="23em"
   height="10rem"
-  zIndex=10
+  :zIndex="10"
   :position="{
     bottom: '2%',
     left: '-1em',
@@ -359,29 +359,26 @@ layout: cover
 # Landsat 9 image of Bangladesh Coast
 # https://unsplash.com/photos/eGGENWtikd0
 background: https://images.unsplash.com/photo-1722083854850-4a24185465ac
-class: px-10
-monacoRunAdditionalDeps:
-  - ./deps/cql2/cql2_wasm.js
 ---
 
-### Monaco Editor
-
-Interactive code with live execution
+# CQL2 WASM - Interactive Example
 
 ```ts {monaco-run} {autorun:true}
-import init, { parse_cql2 } from 'cql2'
+// import { CQL2 } from 'cql2-wasm'
+const { CQL2 } = await import('cql2-wasm')
 
-await init();  // Initialize the WASM module
+const cql2 = new CQL2('collection = foo')
 
-const result = parse_cql2('INTERSECTS(...)');
-console.log(result);
+console.log('item1', cql2.match({collection: 'bar'}))
+
+// Parse and display results
+console.log('Is valid:', cql2.is_valid())
+console.log('JSON:', cql2.to_json())
+console.log('Text:', cql2.to_text())
+
+// Pretty print the JSON
+console.log('Pretty JSON:\n', cql2.to_json_pretty())
 ```
-
-<LogoHorNegMono position="top-right" />
-
-<!--
-NOTE: Monaco's interactive code runner does NOT play well with presenter mode. If you are presenting and want to do live code edits, do those edits on the shared screen, not in the presenter's view
--->
 
 ---
 layout: image-left
@@ -421,8 +418,8 @@ Dynamic QR codes powered by [`slidev-addon-qrcode`](https://github.com/kravetson
 ```jsx
 <CurrentUrlQRCode />
 <CurrentUrlQRCode includeSlideNumber/>
-<CurrentUrlQRCode 
-  width="100" height="100" 
+<CurrentUrlQRCode
+  :width="100" :height="100"
   image='/images/logos/symbol--pos-neg@2x.png'
   url="https://developmentseed.org"
   :dotsOptions="{ 
@@ -438,7 +435,7 @@ Dynamic QR codes powered by [`slidev-addon-qrcode`](https://github.com/kravetson
 <CurrentUrlQRCode  />
 <CurrentUrlQRCode  includeSlideNumber/>
 <CurrentUrlQRCode
-  width="100" height="100" 
+  :width="100" :height="100"
   image='/images/logos/symbol--pos-neg@2x.png'
   url="https://developmentseed.org"
   :dotsOptions="{ 
@@ -463,7 +460,7 @@ image: https://images.unsplash.com/photo-1722080767251-aad7fa1796d3
 <DecorativeRectangle
   width="30%"
   height="96%"
-  zIndex=11
+  :zIndex="11"
   :position="{
     bottom: '2%',
     right: '2%',

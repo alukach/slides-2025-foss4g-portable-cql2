@@ -17,12 +17,19 @@ importers:
       '@slidev/theme-seriph':
         specifier: latest
         version: 0.25.0
+      cql2-wasm:
+        specifier: ^0.4.1
+        version: 0.4.1
       slidev-addon-qrcode:
         specifier: ^1.0.2
         version: 1.0.2
       vue:
         specifier: ^3.5.22
         version: 3.5.22(typescript@5.9.3)
+    devDependencies:
+      vite-plugin-wasm:
+        specifier: ^3.5.0
+        version: 3.5.0(vite@7.1.12(@types/node@22.19.0)(jiti@2.6.1)(yaml@2.8.1))
 
 packages:
 
@@ -1141,6 +1148,9 @@ packages:
 
   cose-base@2.2.0:
     resolution: {integrity: sha512-AzlgcsCbUMymkADOJtQm3wO9S3ltPfYOFD5033keQn9NJzIbtnZj+UdBJe7DYml/8TdbtHJW3j58SOnKhWY/5g==}
+
+  cql2-wasm@0.4.1:
+    resolution: {integrity: sha512-oUzLb2z+82nDPv9nbwmd4YcBa0Cj7KLXO8OyubrUOVECRsKvoh7f1x3ozUxI+jIpohs7LMMALMFDU7iauNHEHQ==}
 
   css-tree@3.1.0:
     resolution: {integrity: sha512-0eW44TGN5SQXU1mWSkKwFstI/22X2bG1nYzZTYMAWjylYURhse752YgbE4Cx46AC+bAvI+/dYTPRk1LqSUnu6w==}
@@ -2479,6 +2489,11 @@ packages:
     peerDependencies:
       vite: '>=2.0.0'
       vue: ^3.0.0
+
+  vite-plugin-wasm@3.5.0:
+    resolution: {integrity: sha512-X5VWgCnqiQEGb+omhlBVsvTfxikKtoOgAzQ95+BZ8gQ+VfMHIjSHr0wyvXFQCa0eKQ0fKyaL0kWcEnYqBac4lQ==}
+    peerDependencies:
+      vite: ^2 || ^3 || ^4 || ^5 || ^6 || ^7
 
   vite@7.1.12:
     resolution: {integrity: sha512-ZWyE8YXEXqJrrSLvYgrRP7p62OziLW7xI5HYGWFzOvupfAlrLvURSzv/FyGyy0eidogEM3ujU+kUG1zuHgb6Ug==}
@@ -4061,6 +4076,8 @@ snapshots:
     dependencies:
       layout-base: 2.0.1
 
+  cql2-wasm@0.4.1: {}
+
   css-tree@3.1.0:
     dependencies:
       mdn-data: 2.12.2
@@ -5631,6 +5648,10 @@ snapshots:
       vue: 3.5.22(typescript@5.9.3)
     transitivePeerDependencies:
       - supports-color
+
+  vite-plugin-wasm@3.5.0(vite@7.1.12(@types/node@22.19.0)(jiti@2.6.1)(yaml@2.8.1)):
+    dependencies:
+      vite: 7.1.12(@types/node@22.19.0)(jiti@2.6.1)(yaml@2.8.1)
 
   vite@7.1.12(@types/node@22.19.0)(jiti@2.6.1)(yaml@2.8.1):
     dependencies:
