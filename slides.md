@@ -359,25 +359,20 @@ layout: cover
 # Landsat 9 image of Bangladesh Coast
 # https://unsplash.com/photos/eGGENWtikd0
 background: https://images.unsplash.com/photo-1722083854850-4a24185465ac
+class: px-10
 ---
 
-# CQL2 WASM - Interactive Example
+# CQL2 WASM
 
 ```ts {monaco-run} {autorun:true}
-// import { CQL2 } from 'cql2-wasm'
-const { CQL2 } = await import('cql2-wasm')
+import { CQL2 } from 'cql2-wasm'
 
 const cql2 = new CQL2('collection = foo')
 
-console.log('item1', cql2.match({collection: 'bar'}))
-
 // Parse and display results
-console.log('Is valid:', cql2.is_valid())
-console.log('JSON:', cql2.to_json())
-console.log('Text:', cql2.to_text())
-
-// Pretty print the JSON
-console.log('Pretty JSON:\n', cql2.to_json_pretty())
+console.log('is_valid():', cql2.is_valid())
+console.log('to_json():', cql2.to_json())
+console.log('to_text():', cql2.to_text())
 ```
 
 ---
