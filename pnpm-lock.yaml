@@ -18,8 +18,8 @@ importers:
         specifier: latest
         version: 0.25.0
       cql2-wasm:
-        specifier: ^0.4.1
-        version: 0.4.1
+        specifier: 0.5.0-rc1
+        version: 0.5.0-rc1
       slidev-addon-qrcode:
         specifier: ^1.0.2
         version: 1.0.2
@@ -1149,8 +1149,8 @@ packages:
   cose-base@2.2.0:
     resolution: {integrity: sha512-AzlgcsCbUMymkADOJtQm3wO9S3ltPfYOFD5033keQn9NJzIbtnZj+UdBJe7DYml/8TdbtHJW3j58SOnKhWY/5g==}
 
-  cql2-wasm@0.4.1:
-    resolution: {integrity: sha512-oUzLb2z+82nDPv9nbwmd4YcBa0Cj7KLXO8OyubrUOVECRsKvoh7f1x3ozUxI+jIpohs7LMMALMFDU7iauNHEHQ==}
+  cql2-wasm@0.5.0-rc1:
+    resolution: {integrity: sha512-9G/Fi94iyfxZ692/q8peL2dRyFOEgJvpKlBe/amM0EsTl8vIy0koWr5bCajNKOCYWItEzOeEny+yqLyF2shFFQ==}
 
   css-tree@3.1.0:
     resolution: {integrity: sha512-0eW44TGN5SQXU1mWSkKwFstI/22X2bG1nYzZTYMAWjylYURhse752YgbE4Cx46AC+bAvI+/dYTPRk1LqSUnu6w==}
@@ -4076,7 +4076,7 @@ snapshots:
     dependencies:
       layout-base: 2.0.1
 
-  cql2-wasm@0.4.1: {}
+  cql2-wasm@0.5.0-rc1: {}
 
   css-tree@3.1.0:
     dependencies:

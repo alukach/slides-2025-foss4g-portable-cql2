@@ -56,6 +56,7 @@ h6 {
 h1 {
   font-size: 3rem;
   line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 h2 {
@@ -146,6 +147,15 @@ blockquote {
 
 blockquote p {
   margin: 0;
+}
+
+/* Layout utility classes */
+.full-height-centered-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 }
 
 /* DevelopmentSeed brand color utility classes */
