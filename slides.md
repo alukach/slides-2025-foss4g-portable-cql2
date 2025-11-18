@@ -145,7 +145,7 @@ And so back to cql2-rs. What does it do?
  -->
 
 ---
-layout: image-left
+layout: image-right
 # Landsat 8 Image of Ayon Island
 # https://unsplash.com/photos/B-bXvd0R1bM
 image: https://images.unsplash.com/photo-1722083855371-0d5a25647ce6
@@ -173,7 +173,7 @@ console.log(
 ```
 
 
-<LogoHorNegMono position="bottom-left" />
+<LogoHorNegMono position="bottom-right" />
 
 ---
 layout: image-right
@@ -212,7 +212,7 @@ CQL2 supports both a text format and a json format. one of cql2-rs' most simple 
  -->
 
 ---
-layout: image-left
+layout: image-right
 class: image-narrow
 # Landsat 9 Image of Taklimakan Desert, China
 # https://unsplash.com/photos/KGzlTHjkyZM
@@ -230,15 +230,14 @@ console.log(
 )
 ```
 
-<LogoHorNegMono position="bottom-left" />
-
+<LogoHorNegMono position="bottom-right" />
 
 ---
-layout: image-left
+layout: image-right
 class: image-narrow
 # Landsat 9 Image of Taklimakan Desert, China
 # https://unsplash.com/photos/KGzlTHjkyZM
-image: https://images.unsplash.com/photo-1722080767795-af488166033d
+image: https://images.unsplash.com/photo-1722080768196-8983bbbb5c0f
 ---
 
 # matches
@@ -262,15 +261,13 @@ console.log(
 ```
 
 
-<LogoHorNegMono position="bottom-left" />
-
+<LogoHorNegMono position="bottom-right" />
 
 ---
-layout: image-left
+layout: image-right
 class: image-narrow
-# Landsat 9 Image of Taklimakan Desert, China
-# https://unsplash.com/photos/KGzlTHjkyZM
-image: https://images.unsplash.com/photo-1722080767795-af488166033d
+# Landsat 9 image of Bangladesh Coast
+image: https://images.unsplash.com/photo-1722083854850-4a24185465ac
 ---
 
 # reduce
@@ -285,8 +282,12 @@ console.log(
 )
 ```
 
-<LogoHorNegMono position="bottom-left" />
+<LogoHorNegMono position="bottom-right" />
 
+---
+layout: image-right
+class: image-narrow
+image: https://images.unsplash.com/photo-1744968777300-210d3bb46817
 ---
 
 # Rust -> Python via PyO3!
