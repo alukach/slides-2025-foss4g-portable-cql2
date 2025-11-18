@@ -188,7 +188,7 @@ class: image-narrow
 ```ts {monaco-run} {autorun:true}
 import { Expr } from 'cql2-wasm'
 
-const expr = 'collection = foo'
+const expr = '(avg("windSpeed") < 4)'
 console.log(
   new Expr(expr).to_json()
 )
