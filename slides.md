@@ -369,9 +369,9 @@ url: https://developmentseed.org/cql2-rs/latest/playground/
 ```ts {monaco-run} {autorun:true}
 import { Expr } from 'cql2-wasm'
 
-const expr = '(avg("windSpeed") < 4)'
+const expr = `collection = 'foo'`
 console.log(
-  new Expr(expr).to_json()
+  new Expr(expr).is_valid()
 )
 ```
 
