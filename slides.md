@@ -364,6 +364,16 @@ url: https://developmentseed.org/cql2-rs/latest/playground/
 
 # Rust -> JS via wasm-bindgen!
 
+
+```ts {monaco-run} {autorun:true}
+import { Expr } from 'cql2-wasm'
+
+const expr = '(avg("windSpeed") < 4)'
+console.log(
+  new Expr(expr).to_json()
+)
+```
+
 ---
 layout: title
 # Landsat 9 image of Apostle Islands, Lake Superior
