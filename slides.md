@@ -359,7 +359,7 @@ fn cql2(py: Python<'_>, m: &Bound<'_, PyModule>) -> PyResult<()> {
 
 ---
 layout: iframe-right
-url: http://developmentseed.org/cql2-rs/latest/playground/
+url: https://developmentseed.org/cql2-rs/latest/playground/
 ---
 
 # Rust -> JS via wasm-bindgen!
